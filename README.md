@@ -1,4 +1,4 @@
-tcli
+tower-cli
 ============
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-tower-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-tower-cli)
