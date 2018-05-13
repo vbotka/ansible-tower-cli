@@ -1,0 +1,13 @@
+---
+
+- name: Create configuration {{ tcli_config_file }}
+  template: >
+    src="tower-cli.cfg.j2"
+    dest="{{ tcli_config_file }}"
+    owner="{{ tcli_config_file_owner }}"
+    group="{{ tcli_config_file_group }}"
+    mode="{{ tcli_config_file_mode }}"
+    backup="yes"
+
+# EOF
+...

@@ -1,0 +1,28 @@
+---
+
+- debug: msg="ansible_os_family = {{ ansible_os_family }}"
+  when: tcli_debug|lower == "yes"
+
+# FreeBSD
+- name: Install tower-cli FreeBSD
+  pip: >
+    name="{{ item }}"
+  with_items: "{{ tcli_packages }}"
+  when: ansible_os_family == "FreeBSD"
+
+# Debian
+- name: Install tower-cli Debian
+  apt: >
+    name="{{ item }}"
+  with_items: "{{ tcli_packages }}"
+  when: ansible_os_family == "Debian"
+        
+# RedHat
+- name: Install tower-cli RedHat
+  yum: >
+    name="{{ item }}"
+  with_items: "{{ tcli_packages }}"
+  when: ansible_os_family == "RedHat"
+  
+# EOF
+...

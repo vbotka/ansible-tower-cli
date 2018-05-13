@@ -1,0 +1,8 @@
+---
+# RedHat vars for tower-cli
+
+tcli_packages:
+  - ansible-tower-cli
+
+# EOF
+...

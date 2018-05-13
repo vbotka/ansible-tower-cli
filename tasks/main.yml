@@ -1,0 +1,24 @@
+---
+# tasks for tower-cli
+
+- name: Add {{ ansible_os_family }} specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags:
+    - bsd_packages
+    - tcli_vars
+    - tcli_all
+
+- import_tasks: packages.yml
+  tags:
+    - bsd_packages
+    - linux_packages
+    - tcli_packages
+    - tcli_all
+
+- import_tasks: configure.yml
+  tags:
+    - tcli_configure
+    - tcli_all
+
+# EOF
+...
