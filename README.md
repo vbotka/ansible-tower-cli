@@ -25,6 +25,7 @@ None.
 
 References
 ----------
+- [Introduction to tower-cli - Ansible](http://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html#introduction-to-tower-cli)
 - [CLI for the Ansible Tower - GitHub](https://github.com/ansible/tower-cli)
 - [Ansible Tower CLI - RTD](http://tower-cli.readthedocs.io/en/latest/)
 
