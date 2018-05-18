@@ -5,7 +5,7 @@ tcli_debug: "no"
 tcli_owner: "admin"
 
 # config
-tcli_config_file: "/home/{{ tcli_owner }}/.tower-cli.cfg"
+tcli_config_file: "/home/{{ tcli_owner }}/.tower_cli.cfg"
 tcli_config_file_owner: "{{ tcli_owner }}"
 tcli_config_file_group: "{{ tcli_owner }}"
 tcli_config_file_mode: "0600"
