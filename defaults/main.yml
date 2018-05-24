@@ -2,9 +2,11 @@
 # default vars for tower-cli
 
 tcli_debug: "no"
-tcli_owner: "admin"
+tcli_install: "yes" # Note 1.
+tcli_config: "yes"
 
-# user config
+tcli_owner: "admin"
+# config
 tcli_config_scope: "general"
 tcli_config_file: "/home/{{ tcli_owner }}/.tower_cli.cfg"
 tcli_config_file_owner: "{{ tcli_owner }}"
@@ -25,6 +27,15 @@ tcli_config_passwd: "password"
 #          62343532623535313836653037633236393965306663613835303234346663343937373739396563
 #          6436636437333331620a373232336230363235613138376438356334653032363262633466346631
 #          3031
+
+# Note 1.
+# tower-cli does not work in CentOS 7.
+# Error:
+# File "/usr/lib/python2.7/site-packages/requests/packages/__init__.py", line 95, in load_module
+# raise ImportError("No module named '%s'" % (name,))
+# ImportError: No module named 'requests.packages.urllib3'
+# Bug: https://bugs.centos.org/view.php?id=13559
+# Last Update: 2017-07-16
 
 # EOF
 ...
