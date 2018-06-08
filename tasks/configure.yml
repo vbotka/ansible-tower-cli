@@ -1,7 +1,7 @@
 ---
 
-#- name: Create user tower configuration
-- template:
+- name: Create user tower configuration
+  template:
     src: "tower-cli.cfg.j2"
     dest: "{{ item.file }}"
     owner: "{{ item.owner }}"

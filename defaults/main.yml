@@ -2,7 +2,8 @@
 # default vars for tower-cli
 
 tcli_debug: False
-tcli_install: True # Note 1.
+tcli_install: True
+# Note 1.
 
 tcli_owner: "admin"
 # config
