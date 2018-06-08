@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 [{{ tcli_config_scope }}]
-host = {{ tcli_config_proto }}://{{ tcli_config_host }}
-username = {{ tcli_config_user }}
-password = {{ tcli_config_passwd }}
-verify_ssl = {{ tcli_config_verifyssl }}
+host = {{ item.proto }}://{{ item.host }}
+username = {{ item.user }}
+password = {{ item.tcli_config_passwd }}
+verify_ssl = {{ item.verifyssl }}

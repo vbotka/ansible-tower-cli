@@ -1,22 +1,23 @@
 ---
 # default vars for tower-cli
 
-tcli_debug: "no"
-tcli_install: "yes" # Note 1.
-tcli_config: "yes"
+tcli_debug: False
+tcli_install: True # Note 1.
 
 tcli_owner: "admin"
 # config
 tcli_config_scope: "general"
-tcli_config_file: "/home/{{ tcli_owner }}/.tower_cli.cfg"
-tcli_config_file_owner: "{{ tcli_owner }}"
-tcli_config_file_group: "{{ tcli_owner }}"
-tcli_config_file_mode: "0600"
-tcli_config_host: "srv.example.com"
-tcli_config_user: "admin"
-tcli_config_proto: "http"
-tcli_config_verifyssl: "no"
-tcli_config_passwd: "password"
+tcli_config:
+  - { file: "/home/{{ tcli_owner }}/.tower_cli.cfg",
+      owner: "{{ tcli_owner }}",
+      group: "{{ tcli_owner }}",
+      mode: "0600",
+      host: "srv.example.com",
+      user: "admin",
+      proto: "http",
+      verifyssl: "no",
+      tcli_config_passwd: "password" }
+
 #> cat ~/.vault_pass.txt
 #ansible-vault-password
 #> ansible-vault encrypt_string --vault-id ~/.vault_pass.txt 'password' --name 'tcli_config_passwd'

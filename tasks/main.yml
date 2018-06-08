@@ -8,21 +8,11 @@
       ansible_distribution [ {{ ansible_distribution }} ]
       ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
       tcli_install [ {{ tcli_install }} ]
-      tcli_config [ {{ tcli_config }} ]
-      tcli_owner [ {{ tcli_owner }} ]
       tcli_config_scope [ {{ tcli_config_scope }} ]
-      tcli_config_file [ {{ tcli_config_file }} ]
-      tcli_config_file_owner [ {{ tcli_config_file_owner }} ]
-      tcli_config_file_group [ {{ tcli_config_file_group }} ]
-      tcli_config_file_mode [ {{ tcli_config_file_mode }} ]
-      tcli_config_host [ {{ tcli_config_host }} ]
-      tcli_config_user [ {{ tcli_config_user }} ]
-      tcli_config_proto [ {{ tcli_config_proto }} ]
-      tcli_config_verifyssl [ {{ tcli_config_verifyssl }} ]
-      tcli_config_passwd [ {{ tcli_config_passwd }} ]
+      tcli_config [ {{ tcli_config | to_nice_yaml }} ]
   debug:
     msg: "{{ msg.split('\n') }}"
-  when: tcli_debug|lower == "yes"
+  when: tcli_debug
   tags:
     - tcli_debug
     - tcli_all
@@ -35,7 +25,7 @@
     - tcli_all
 
 - import_tasks: packages.yml
-  when: tcli_install|lower == "yes"
+  when: tcli_install
   tags:
     - bsd_packages
     - linux_packages
@@ -43,7 +33,6 @@
     - tcli_all
 
 - import_tasks: configure.yml
-  when: tcli_config|lower == "yes"
   tags:
     - tcli_config
     - tcli_all
