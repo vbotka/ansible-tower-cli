@@ -1,8 +1,5 @@
 ---
 
-- debug: msg="ansible_os_family = {{ ansible_os_family }}"
-  when: tcli_debug
-
 # FreeBSD
 - name: Install tower-cli FreeBSD
   pip:

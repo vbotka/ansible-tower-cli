@@ -5,6 +5,7 @@
   include_vars: "{{ ansible_os_family }}.yml"
   tags:
     - bsd_packages
+    - linux_packages
     - tcli_vars
     - tcli_all
 
