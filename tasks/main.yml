@@ -1,6 +1,13 @@
 ---
 # tasks for tower-cli
 
+- name: Add {{ ansible_os_family }} specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags:
+    - bsd_packages
+    - tcli_vars
+    - tcli_all
+
 - name: Debug
   vars:
     msg: |
@@ -15,13 +22,6 @@
   when: tcli_debug
   tags:
     - tcli_debug
-    - tcli_all
-
-- name: Add {{ ansible_os_family }} specific variables
-  include_vars: "{{ ansible_os_family }}.yml"
-  tags:
-    - bsd_packages
-    - tcli_vars
     - tcli_all
 
 - import_tasks: packages.yml
