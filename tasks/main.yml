@@ -3,11 +3,7 @@
 
 - name: Add {{ ansible_os_family }} specific variables
   include_vars: "{{ ansible_os_family }}.yml"
-  tags:
-    - bsd_packages
-    - linux_packages
-    - tcli_vars
-    - tcli_all
+  tags: tcli_vars
 
 - name: Debug
   vars:
@@ -17,26 +13,19 @@
       ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
       tcli_install [ {{ tcli_install }} ]
       tcli_config_scope [ {{ tcli_config_scope }} ]
-      tcli_config [ {{ tcli_config | to_nice_yaml }} ]
+      tcli_config [
+      {{ tcli_config | to_nice_yaml }} ]
   debug:
     msg: "{{ msg.split('\n') }}"
   when: tcli_debug
-  tags:
-    - tcli_debug
-    - tcli_all
+  tags: tcli_debug
 
 - import_tasks: packages.yml
   when: tcli_install
-  tags:
-    - bsd_packages
-    - linux_packages
-    - tcli_packages
-    - tcli_all
+  tags: tcli_packages
 
 - import_tasks: configure.yml
-  tags:
-    - tcli_config
-    - tcli_all
+  tags: tcli_config
 
 # EOF
 ...
