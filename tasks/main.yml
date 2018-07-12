@@ -1,9 +1,9 @@
 ---
 # tasks for tower-cli
 
-- name: Add {{ ansible_os_family }} specific variables
+- name: "Add {{ ansible_os_family }} specific variables"
   include_vars: "{{ ansible_os_family }}.yml"
-  tags: tcli_vars
+  tags: [ tcli_vars, always ]
 
 - name: Debug
   vars:
@@ -13,8 +13,8 @@
       ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
       tcli_install [ {{ tcli_install }} ]
       tcli_config_scope [ {{ tcli_config_scope }} ]
-      tcli_config [
-      {{ tcli_config | to_nice_yaml }} ]
+      tcli_config
+      {{ tcli_config | to_nice_yaml }}
   debug:
     msg: "{{ msg.split('\n') }}"
   when: tcli_debug

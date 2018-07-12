@@ -4,14 +4,14 @@
 - name: Install tower-cli FreeBSD
   pip:
     name: "{{ item }}"
-  with_items: "{{ tcli_packages }}"
+  loop: "{{ tcli_packages }}"
   when: ansible_os_family == "FreeBSD"
 
 # Linux
 - name: Install tower-cli Linux
   package:
     name: "{{ item }}"
-  with_items: "{{ tcli_packages }}"
+  loop: "{{ tcli_packages }}"
   when: (ansible_os_family == "RedHat") or
         (ansible_os_family == "Debian")
   

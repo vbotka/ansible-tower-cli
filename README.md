@@ -15,7 +15,7 @@ None.
 Role Variables
 --------------
 
-Read the defaults and examples in vars.
+Review the defaults and examples in vars.
 
 
 Dependencies
