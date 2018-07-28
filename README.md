@@ -1,9 +1,9 @@
-tower-cli
+tower_cli
 ============
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-tower-cli.svg?branch=master)](https://travis-ci.org/vbotka/ansible-tower-cli)
 
-[Ansible role](https://galaxy.ansible.com/vbotka/tower-cli/). Install and configure *tower-cli*.
+[Ansible role](https://galaxy.ansible.com/vbotka/tower_cli/). Install and configure *tower-cli*.
 
 
 Requirements
