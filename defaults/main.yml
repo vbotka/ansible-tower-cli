@@ -3,7 +3,12 @@
 
 tcli_debug: False
 tcli_install: True
-# Note 1.
+# Linux
+linux_install_retries: 10
+linux_install_delay: 5
+# Python
+pip_install_retries: 10
+pip_install_delay: 5
 
 tcli_owner: "admin"
 # config

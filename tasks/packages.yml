@@ -5,6 +5,10 @@
   pip:
     name: "{{ item }}"
   loop: "{{ tcli_packages }}"
+  register: result
+  retries: "{{ pip_install_retries }}"
+  until: result is succeeded
+  delay: "{{ pip_install_delay }}"
   when: ansible_os_family == "FreeBSD"
 
 # Linux
@@ -12,6 +16,10 @@
   package:
     name: "{{ item }}"
   loop: "{{ tcli_packages }}"
+  register: result
+  retries: "{{ linux_install_retries }}"
+  until: result is succeeded
+  delay: "{{ linux_install_delay }}"
   when: (ansible_os_family == "RedHat") or
         (ansible_os_family == "Debian")
 
