@@ -8,7 +8,7 @@
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
     backup: yes
-  with_items: "{{ tcli_config }}"
+  loop: "{{ tcli_config }}"
 
 # EOF
 ...

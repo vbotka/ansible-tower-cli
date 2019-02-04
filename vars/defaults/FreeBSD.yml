@@ -1,6 +1,8 @@
 ---
 # FreeBSD vars for tower-cli
 
+pip_executable: pip-3.6
+
 tcli_packages:
   - ansible-tower-cli
 

@@ -4,7 +4,7 @@
 - name: Install tower-cli FreeBSD
   pip:
     name: "{{ item }}"
-    executable: "{{ pip_executable }}"
+    executable: "{{ pip_executable|default(omit) }}"
   loop: "{{ tcli_packages }}"
   register: result
   retries: "{{ pip_install_retries }}"

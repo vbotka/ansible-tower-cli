@@ -9,7 +9,6 @@ linux_install_delay: 5
 # Python
 pip_install_retries: 10
 pip_install_delay: 5
-pip_executable: pip-3.6
 
 tcli_owner: "admin"
 # config
