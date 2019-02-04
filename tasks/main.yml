@@ -14,6 +14,7 @@
 
       linux_install_retries [ {{ linux_install_retries }} ]
       linux_install_delay [ {{ linux_install_delay }} ]
+      pip_executable [ {{ pip_executable }} ]
       pip_install_retries [ {{ pip_install_retries }} ]
       pip_install_delay [ {{ pip_install_delay }} ]
 
