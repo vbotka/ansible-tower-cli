@@ -1,5 +1,5 @@
 ---
-# default vars for tower-cli
+# default vars for tower_cli
 
 tcli_debug: False
 tcli_install: True
@@ -14,26 +14,26 @@ tcli_owner: "admin"
 # config
 tcli_config_scope: "general"
 tcli_config:
-  - { file: "/home/{{ tcli_owner }}/.tower_cli.cfg",
-      owner: "{{ tcli_owner }}",
-      group: "{{ tcli_owner }}",
-      mode: "0600",
-      host: "srv.example.com",
-      user: "admin",
-      proto: "http",
-      verifyssl: "no",
-      tcli_config_passwd: "password" }
+  - file: "/home/{{ tcli_owner }}/.tower_cli.cfg"
+    owner: "{{ tcli_owner }}"
+    group: "{{ tcli_owner }}"
+    mode: "0600"
+    host: "srv.example.com"
+    user: "admin"
+    proto: "http"
+    verifyssl: "no"
+    tcli_config_passwd: "password"
 
-#> cat ~/.vault_pass.txt
-#ansible-vault-password
-#> ansible-vault encrypt_string --vault-id ~/.vault_pass.txt 'password' --name 'tcli_config_passwd'
-#tcli_config_passwd: !vault |
-#          $ANSIBLE_VAULT;1.1;AES256
-#          38333562613064633834396564626634383065393734323038366162306565303232383731616630
-#          6563323237306262623134613262633562303866336634300a313736626430346364313539336532
-#          62343532623535313836653037633236393965306663613835303234346663343937373739396563
-#          6436636437333331620a373232336230363235613138376438356334653032363262633466346631
-#          3031
+# > cat ~/.vault_pass.txt
+# ansible-vault-password
+# > ansible-vault encrypt_string --vault-id ~/.vault_pass.txt 'password' --name 'tcli_config passwd'
+# tcli_config_passwd: !vault |
+#           $ANSIBLE_VAULT;1.1;AES256
+#           38333562613064633834396564626634383065393734323038366162306565303232383731616630
+#           6563323237306262623134613262633562303866336634300a313736626430346364313539336532
+#           62343532623535313836653037633236393965306663613835303234346663343937373739396563
+#           6436636437333331620a373232336230363235613138376438356334653032363262633466346631
+#           3031
 
 # Note 1.
 # tower-cli does not work in CentOS 7.
