@@ -9,7 +9,7 @@
         - "{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
         - "{{ ansible_distribution }}.yml"
         - "{{ ansible_os_family }}.yml"
-        - "default.yml"
+        - "defaults.yml"
       paths: "{{ role_path }}/vars/defaults"
 
 - name: "Custom vars for {{ ansible_os_family }}
@@ -21,7 +21,7 @@
         - "{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
         - "{{ ansible_distribution }}.yml"
         - "{{ ansible_os_family }}.yml"
-        - "default.yml"
+        - "defaults.yml"
       paths: "{{ role_path }}/vars"
 
 # EOF

@@ -1,8 +1,9 @@
 ---
 # default vars for tower_cli
 
-tcli_debug: False
-tcli_install: True
+tcli_debug: false
+tcli_install: true
+tcli_backup_conf: false
 # Linux
 linux_install_retries: 10
 linux_install_delay: 5

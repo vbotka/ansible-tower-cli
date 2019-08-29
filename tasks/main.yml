@@ -1,29 +1,30 @@
 ---
-# tasks for tower-cli
+# tasks for tower_cli
 
-- import_tasks: vars.yml
+- name: Include vars
+  import_tasks: vars.yml
   tags: [tcli_vars, always]
 
 - name: Debug
   vars:
     msg: |
-      ansible_os_family [ {{ ansible_os_family }} ]
-      ansible_distribution [ {{ ansible_distribution }} ]
-      ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
+      ansible_os_family [{{ ansible_os_family }}]
+      ansible_distribution [{{ ansible_distribution }}]
+      ansible_distribution_major_version [{{ ansible_distribution_major_version }}]
 
-      linux_install_retries [ {{ linux_install_retries }} ]
-      linux_install_delay [ {{ linux_install_delay }} ]
-      pip_executable [ {{ pip_executable|default('ABSENT') }} ]
-      pip_install_retries [ {{ pip_install_retries }} ]
-      pip_install_delay [ {{ pip_install_delay }} ]
+      linux_install_retries [{{ linux_install_retries }}]
+      linux_install_delay [{{ linux_install_delay }}]
+      pip_executable [{{ pip_executable|default('ABSENT') }}]
+      pip_install_retries [{{ pip_install_retries }}]
+      pip_install_delay [{{ pip_install_delay }}]
 
-      tcli_install [ {{ tcli_install }} ]
-      tcli_config_scope [ {{ tcli_config_scope }} ]
+      tcli_install [{{ tcli_install }}]
+      tcli_config_scope [{{ tcli_config_scope }}]
       tcli_config
-      {{ tcli_config | to_nice_yaml }}
+      {{ tcli_config|to_nice_yaml }}
   debug:
     msg: "{{ msg.split('\n') }}"
-  when: tcli_debug
+  when: tcli_debug|bool
   tags: [tcli_debug, always]
 
 - import_tasks: packages.yml

@@ -7,7 +7,7 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
-    backup: yes
+    backup: "{{ tcli_backup_conf }}"
   loop: "{{ tcli_config }}"
 
 # EOF
