@@ -14,7 +14,7 @@
 
       linux_install_retries [{{ linux_install_retries }}]
       linux_install_delay [{{ linux_install_delay }}]
-      pip_executable [{{ pip_executable|default('ABSENT') }}]
+      pip_executable [{{ pip_executable|default('UNDEFINED') }}]
       pip_install_retries [{{ pip_install_retries }}]
       pip_install_delay [{{ pip_install_delay }}]
 
