@@ -9,6 +9,7 @@
     mode: "{{ item.mode }}"
     backup: "{{ tcli_backup_conf }}"
   loop: "{{ tcli_config }}"
+  no_log: "{{ not tcli_debug_classified|bool }}"
 
 # EOF
 ...

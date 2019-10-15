@@ -20,8 +20,11 @@
 
       tcli_install [{{ tcli_install }}]
       tcli_config_scope [{{ tcli_config_scope }}]
+
+      {% if tcli_debug_classified|bool %}
       tcli_config
       {{ tcli_config|to_nice_yaml }}
+      {% endif %}
   debug:
     msg: "{{ msg.split('\n') }}"
   when: tcli_debug|bool

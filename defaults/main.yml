@@ -2,6 +2,7 @@
 # default vars for tower_cli
 
 tcli_debug: false
+tcli_debug_classified: false
 tcli_install: true
 tcli_backup_conf: false
 # Linux
