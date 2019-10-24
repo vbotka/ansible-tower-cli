@@ -1,10 +1,14 @@
 ---
 # FreeBSD vars for tower-cli
 
-pip_executable: pip-3.6
+tcli_pip_install: true
 
 tcli_packages:
-  - ansible-tower-cli
+  - name: 'ansible-tower-cli'
+
+tcli_pip_executable: "{{ pip_executable_freebsd|default('/usr/local/bin/pip-3.6') }}"
+
+tcli_links: []
 
 # EOF
 ...

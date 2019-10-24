@@ -1,8 +1,14 @@
 ---
 # Debian vars for tower_cli
 
+tcli_pip_install: false
+
 tcli_packages:
-  - ansible-tower-cli
+  - name: 'ansible-tower-cli'
+
+tcli_pip_executable: "{{ pip_executable_debian|default('/usr/bin/pip3') }}"
+
+tcli_links: []
 
 # EOF
 ...

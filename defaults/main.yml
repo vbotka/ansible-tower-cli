@@ -1,19 +1,34 @@
 ---
 # default vars for tower_cli
 
+tcli_install: true
 tcli_debug: false
 tcli_debug_classified: false
-tcli_install: true
 tcli_backup_conf: false
+
+# tcli_pip_install: false                # OS specific variable see vars/defaults
+
+# FreeBSD
+freebsd_install_retries: 10
+freebsd_install_delay: 5
+freebsd_install_method: "packages"
+# freebsd_install_method: "ports"
+freebsd_use_packages: true
+
 # Linux
 linux_install_retries: 10
 linux_install_delay: 5
+
 # Python
 pip_install_retries: 10
 pip_install_delay: 5
+# pip_extraagrs: ""                     # Optional
 
+# tcli_pip_executable: pip2              # OS specific variable see vars/defaults
+# tcli_pip_requirements: []              # Optional
+
+# Configuration
 tcli_owner: "admin"
-# config
 tcli_config_scope: "general"
 tcli_config:
   - file: "/home/{{ tcli_owner }}/.tower_cli.cfg"

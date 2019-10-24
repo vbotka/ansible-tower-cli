@@ -1,8 +1,14 @@
 ---
 # RedHat vars for tower-cli
 
+tcli_pip_install: false
+
 tcli_packages:
-  - ansible-tower-cli
+  - name: 'ansible-tower-cli'
+
+pip_executable: "{{ pip_executable_redhat|default('/usr/bin/pip3') }}"
+
+tcli_links: []
 
 # EOF
 ...
