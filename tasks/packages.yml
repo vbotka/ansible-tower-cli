@@ -18,7 +18,7 @@
       debug:
         var: result
   when:
-    - not tcli_pip_install
+    - not tcli_pip_install|bool
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method|lower == "packages"
 
@@ -38,7 +38,7 @@
       debug:
         var: result
   when:
-    - not tcli_pip_install
+    - not tcli_pip_install|bool
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method|lower == "ports"
 
@@ -58,12 +58,12 @@
       debug:
         var: result
   when:
-    - not tcli_pip_install
+    - not tcli_pip_install|bool
     - ansible_os_family == "RedHat" or ansible_os_family == "Debian"
 
 # pip ----------------------------------------------------------------
 - name: "packages: Test {{ tcli_pip_executable }} exists"
-  when: tcli_pip_install
+  when: tcli_pip_install|bool
   block:
     - name: "packages: Stat {{ tcli_pip_executable }}"
       stat:
@@ -78,7 +78,7 @@
       meta: end_host
 
 - name: "packages: Install Ansible Lint pip packages for {{ tcli_owner }}"
-  when: tcli_pip_install
+  when: tcli_pip_install|bool
   become_user: "{{ tcli_owner }}"
   become: true
   changed_when: false  # Note 1.
@@ -96,14 +96,14 @@
 
 - name: "packages: Debug pip packages"
   when:
-    - tcli_pip_install
+    - tcli_pip_install|bool
     - tcli_debug|bool
   debug:
     var: result
 
 - name: "packages: Install Ansible Lint pip requirements for {{ tcli_owner }}"
   when:
-    - tcli_pip_install
+    - tcli_pip_install|bool
     - tcli_pip_requirements is defined
   become_user: "{{ tcli_owner }}"
   become: true
@@ -119,7 +119,7 @@
 
 - name: "packages: Debug pip requirements"
   when:
-    - tcli_pip_install
+    - tcli_pip_install|bool
     - tcli_debug|bool
   debug:
     var: result
