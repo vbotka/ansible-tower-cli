@@ -69,6 +69,10 @@
       stat:
         path: "{{ tcli_pip_executable }}"
       register: result
+    - name: "packages: Debug stat {{ tcli_pip_executable }}"
+      when: tcli_debug|bool
+      debug:
+        var: result
     - name: "packages: Not exists {{ tcli_pip_executable }}"
       when: not result.stat.exists
       debug:
