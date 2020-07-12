@@ -4,7 +4,7 @@
 tcli_pip_install: false
 
 tcli_packages:
-  - name: 'ansible-tower-cli'
+  - name: ansible-tower-cli
 
 pip_executable: "{{ pip_executable_redhat|default('/usr/bin/pip3') }}"
 

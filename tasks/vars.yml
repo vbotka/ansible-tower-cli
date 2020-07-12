@@ -25,6 +25,7 @@
         - defaults.yml
         - default.yml
       paths: "{{ role_path }}/vars"
+      skip: true
 
 # EOF
 ...

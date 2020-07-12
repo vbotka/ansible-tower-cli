@@ -4,7 +4,7 @@
 tcli_pip_install: true
 
 tcli_packages:
-  - name: 'ansible-tower-cli'
+  - name: ansible-tower-cli
 
 tcli_pip_executable: "{{ pip_executable_freebsd|default('/usr/local/bin/pip-3.6') }}"
 
