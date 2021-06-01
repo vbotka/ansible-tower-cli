@@ -8,6 +8,9 @@ Feel free to [share your feedback and report issues](https://github.com/vbotka/a
 
 [Contributions are welcome](https://github.com/firstcontributions/first-contributions).
 
+  ###################################################################
+  # THIS ROLE IS OBSOLETE. USE AVAILABLE PACKAGES TO INSTALL ansible-tower-cli.
+  ###################################################################
 
 ## Requirements
 
